@@ -1,22 +1,96 @@
-
 {
-  "world_tropes": [],
-  "archetypes": [],
-  "loot_tiers": []
-}
+  "project_version": "1.0.0-alpha",
+  "project_name": "The Transplanted Soul: Isekai TTRPG",
 
-{
+  // --- CHAPTER 2: THE WORLD FORGE OPTIONS ---
+  "world_forge_options": {
+    "transition_trope": [
+      { "id": "trope_T1A", "name": "The Chosen (Summoning)", "impact": "High starting stakes; immediate, shared, external Quest. GM can grant a minor Starting Boon." },
+      { "id": "trope_T1B", "name": "The Fluke (Accidental Transport)", "impact": "High Survival challenge; self-defined goals. Start with limited gear and potential initial Lingering Injury." }
+    ],
+    "logic_trope": [
+      { "id": "logic_L1A", "name": "The Game World (LitRPG Logic)", "impact": "XP and Proficiency Bonuses should be openly discussed. Activates 'System Wielder' benefits fully.", "rule_override": "Use visible Skill Checks tied to Proficiency." },
+      { "id": "logic_L1B", "name": "The Political World (Social Logic)", "impact": "Focus on Intrigue and Diplomacy. Activates 'Charmer' benefits fully.", "rule_override": "Must use the Reputation Score Module." },
+      { "id": "logic_L1C", "name": "The Grim World (Survival Logic)", "impact": "Focus on resource management and caution. Activates 'Crafter' benefits fully.", "rule_override": "Use Gritty Realism Rest Rules (Long Rest = 7 days)." }
+    ]
+  },
+
+  // --- CHAPTER 2: MAGIC AND CRAFTING ---
+  "magic_system": {
+    "source_scarcity": [
+      { "id": "magic_M1A", "name": "Woven Magic (High Availability)", "impact": "Standard 5E spellcasting works perfectly; magic is common." },
+      { "id": "magic_M1B", "name": "Rare Magic (Low Availability)", "impact": "Casters may require specific Foci for 3rd level+ spells.", "rule_override": "Use Wild Magic Surge on a natural 1 for 3rd level+ spells." },
+      { "id": "magic_M1C", "name": "Personal Magic (Internal Availability)", "impact": "Magic from mind/spirit.", "rule_override": "Casters may use Mana Point Pool optional rules." }
+    ],
+    "integration_level": [
+      { "id": "integration_I1A", "name": "Compatible", "impact": "Magic and technology enhance each other. Crafter Archetype excels." },
+      { "id": "integration_I1B", "name": "Nullifying", "impact": "Magic and technology repel. Modern electronics short out near 3rd level spells." },
+      { "id": "integration_I1C", "name": "Oblivious", "impact": "Magic and technology ignore each other. Modern weapons provide a unique, unmagical advantage." }
+    ]
+  },
+
+  // --- CHAPTER 2: GUILDS AND INSTITUTIONS ---
+  "guild_system": {
+    "philosophy": [
+      { "id": "guild_G1A", "name": "The Order (Lawful/Efficient)", "impact": "Strict rules, guaranteed safety/pay. Favors System Wielder." },
+      { "id": "guild_G1B", "name": "The Market (Chaotic/Decadent)", "impact": "Shady quests, negotiable contracts. Favors Charmer." },
+      { "id": "guild_G1C", "name": "The Crucible (Grim/Survival)", "impact": "Brutal training, minimal interaction.", "crafting_multiplier": 2, "impact_note": "Applies Crafting Multiplier x2. Favors Crafter." }
+    ],
+    "ranking_mechanism": [
+      { "id": "rank_R1A", "name": "Point-Based Advancement", "impact": "Rank determined by accumulated Guild Seals (e.g., 100 Seals per rank). Visible progression." },
+      { "id": "rank_R1B", "name": "Patron-Based Advancement", "impact": "Rank requires successful completion of Rank-Up Trials for powerful NPCs. Subject to political favor." }
+    ]
+  },
+
+  // --- CHAPTER 3: ISEKAI ARCHETYPES ---
   "archetypes": [
     {
-      "name": "System Wielder",
-      "focus": "Optimization, Action Economy",
+      "id": "arch_SW", "name": "System Wielder", "focus": "Optimization, Action Economy",
       "features": [
-        {"level": 1, "name": "Quest Log Intuition", "mechanic": "Advantage on Perception (AC/Vulnerabilities) and Investigation (Objectives)."},
-        {"level": 5, "name": "Action Economy Mastery", "mechanic": "Once/SR or LR, use a limited action (potion, draw weapon) as a Bonus Action."},
-        {"level": 10, "name": "Break the System", "mechanic": "Once/LR, declare a damaging attack/spell a Critical Hit before the roll."}
+        { "level": 1, "name": "Quest Log Intuition", "mechanic": "Advantage on Perception (AC/Vulnerabilities) and Investigation (Objectives)." },
+        { "level": 5, "name": "Action Economy Mastery", "mechanic": "Once/SR or LR, use a limited action (potion, draw weapon) as a Bonus Action." },
+        { "level": 10, "name": "Break the System", "mechanic": "Once/LR, declare a damaging attack/spell a Critical Hit before the roll." }
       ]
     },
-    // ... Add Crafter and Charmer data here
-  ]
-}
+    {
+      "id": "arch_CR", "name": "Crafter", "focus": "Tool Proficiency, Resource Management",
+      "features": [
+        { "level": 1, "name": "Rapid Fabrication", "mechanic": "Gain proficiency in one tool. Halve time for mundane crafting (8hr -> 1hr)." },
+        { "level": 5, "name": "Modern Synthesis", "mechanic": "Once/LR, grant a potion/scroll a temporary boost (+2 DC or +2 damage)." },
+        { "level": 10, "name": "World-Tech Integration", "mechanic": "Once/LR, spend 1 min to modify a non-artifact magic item for 1 hour (GM's discretion)." }
+      ]
+    },
+    {
+      "id": "arch_CH", "name": "Charmer", "focus": "Social Checks, Reputation, Leadership",
+      "features": [
+        { "level": 1, "name": "Faction Magnet", "mechanic": "Gain Persuasion proficiency. Use PB pool for +1 bonus on Charisma checks (refreshes LR)." },
+        { "level": 5, "name": "Reputation Anchor", "mechanic": "Successful non-combat negotiation raises party reputation with that faction by one tier." },
+        { "level": 10, "name": "Recruitment Drive", "mechanic": "Once/LR, DC 17 Persuasion check to gain a temporary CR 2 or lower ally for 1d4 days." }
+      ]
+    }
+  ],
 
+  // --- CHAPTER 4: DUNGEON CORE AND LOOT ---
+  "dungeon_core": {
+    "personalities": [
+      { "id": "core_D1A", "name": "The Calculated Core", "focus": "Optimization, Traps (Mechanical).", "saving_throw_prof": "INT" },
+      { "id": "core_D1B", "name": "The Territorial Core", "focus": "Resource Hoarding, Hazards (Natural/Biological).", "saving_throw_prof": "CON" },
+      { "id": "core_D1C", "name": "The Manipulative Core", "focus": "Illusions, Social Traps, Recruitment.", "saving_throw_prof": "CHA" }
+    ],
+    "mana_mechanics": {
+      "growth_trigger": 10,
+      "monster_cost": 1,
+      "mana_gain_base": "1d4"
+    }
+  },
+
+  "loot_economy": {
+    "crafting_base_dc": 10,
+    "crafting_rarity_multiplier": 2,
+    "tiers": [
+      { "tier": 1, "name": "Mundane Components", "use": "Standard 5E gear, currency exchange." },
+      { "tier": 2, "name": "Exotic Components (Monster Parts)", "use": "Tier I + potent potions, specialized tools.", "formula_note": "Crafting DC = Base DC (10) + (Rarity Score x Multiplier (2))." },
+      { "tier": 3, "name": "Essence and Core Materials", "use": "Mandatory for permanent magic items and enchanting. High market value." }
+    ]
+  }
+}
