@@ -1,1 +1,22 @@
 
+{
+  "world_tropes": [],
+  "archetypes": [],
+  "loot_tiers": []
+}
+
+{
+  "archetypes": [
+    {
+      "name": "System Wielder",
+      "focus": "Optimization, Action Economy",
+      "features": [
+        {"level": 1, "name": "Quest Log Intuition", "mechanic": "Advantage on Perception (AC/Vulnerabilities) and Investigation (Objectives)."},
+        {"level": 5, "name": "Action Economy Mastery", "mechanic": "Once/SR or LR, use a limited action (potion, draw weapon) as a Bonus Action."},
+        {"level": 10, "name": "Break the System", "mechanic": "Once/LR, declare a damaging attack/spell a Critical Hit before the roll."}
+      ]
+    },
+    // ... Add Crafter and Charmer data here
+  ]
+}
+
